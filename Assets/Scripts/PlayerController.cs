@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     // "isOnGround" variable helps us to add the delay in pressing the space bar which prevents spamming of it and flying to the space :) .
     // Variables:- 
     private Rigidbody playerRB;
+    private Animator playerAnimation;
     public InputAction jumpAction;
     public float jumpForce = 10.0f;
     public float gravityModifier;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        playerAnimation = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
 
         jumpAction.Enable();
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
+            playerAnimation.SetTrigger("Jump_trig");
         }
     }
     private void OnCollisionEnter(Collision collision)
