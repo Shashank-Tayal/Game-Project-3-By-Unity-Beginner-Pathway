@@ -2,14 +2,18 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    // Spawns the obstacle.
+
     public GameObject obstaclePrefab;
     private Vector3 spawnPos = new Vector3(25, 0, 0);
     private float delayStart = 2;
     private float delaySpawn = 2;
+    private PlayerController playerControllerScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         InvokeRepeating("SpawnObstacle", delayStart, delaySpawn);
     }
 
@@ -20,6 +24,8 @@ public class SpawnManager : MonoBehaviour
     }
     void SpawnObstacle()
     {
-        Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+        // With this the obstacles won't spawn after the collision of player with the obstacle.
+        if (playerControllerScript.gameOver == false)
+            Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
     }
 }
