@@ -5,6 +5,7 @@ public class MoveLeft : MonoBehaviour
     // Making the background move left instead of making the player move.
     public float speed = 30;
     private PlayerController playerControllerScript;
+    public float leftBound = -15;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,8 +17,9 @@ public class MoveLeft : MonoBehaviour
     void Update()
     {
         if (playerControllerScript.gameOver == false)
-        {
             transform.Translate(Vector3.left * Time.deltaTime * speed);
-        }
+
+        if ((transform.position.x < leftBound) && (CompareTag("Obstacle")))
+            Destroy(gameObject);
     }
 }
