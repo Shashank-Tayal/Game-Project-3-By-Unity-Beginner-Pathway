@@ -27,7 +27,7 @@ Take control of the farmer running through a continuous countryside landscape. D
 
 | Action | Key / Input |
 |---|---|
-| **Jump** | `Spacebar` / `Left Mouse Click` |
+| **Jump** | `Spacebar` |
 
 ---
 
