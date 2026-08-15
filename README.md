@@ -5,7 +5,7 @@
 
 > A 3D side-scrolling endless runner game developed in Unity, focusing on physics-based movement, dynamic spawning, and animation states.
 
-(<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/128d1842-52a9-4d3d-baf9-51cf55ac48d1" />)
+(<img width="1920" height="1080" alt="Screenshot (20)" src="https://github.com/user-attachments/assets/e337a13c-c12f-4d89-8a4f-0b0ea4b9c289" />)
 
 ---
 
