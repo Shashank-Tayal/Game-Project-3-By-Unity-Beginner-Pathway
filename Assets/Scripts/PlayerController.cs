@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     // Variables:- 
     private Rigidbody playerRB;
     private Animator playerAnimation;
+    public ParticleSystem explosionParticle;
     public InputAction jumpAction;
     public float jumpForce = 10.0f;
     public float gravityModifier;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             playerAnimation.SetBool("Death_b", true);
             playerAnimation.SetInteger("DeathType_int", 1);
+            explosionParticle.Play();
         }
     }
 }
