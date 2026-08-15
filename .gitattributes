@@ -169,3 +169,8 @@ Packages/packages-lock.json linguist-generated
 
 # Exceptions for .asset files such as lightning pre-baking
 LightingData.asset     binary
+
+# Ignore Unity/Asset files from language detection
+*.mat linguist-detectable=false
+*.meta linguist-detectable=false
+*.asset linguist-detectable=false
